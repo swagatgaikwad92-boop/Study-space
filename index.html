@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
   <title>Study Space</title>
+  <style>html,body{margin:0;height:100%;background:#f4f1ea;font-family:system-ui,sans-serif;color:#2a2622}#boot{position:fixed;inset:0;display:grid;place-items:center;padding:24px;text-align:center}</style>
   <meta name="description" content="A calm glass digital desk for PDFs, lectures, notes and focus.">
   <meta name="theme-color" content="#f4f1ea">
   <meta name="mobile-web-app-capable" content="yes">
@@ -11,21 +12,11 @@
   <meta name="apple-mobile-web-app-title" content="Study Space">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="color-scheme" content="light">
+  <meta name="vendor-base" content="">
+  <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-  <link rel="stylesheet" href="styles/tokens.css">
-  <link rel="stylesheet" href="styles/glass.css">
-  <link rel="stylesheet" href="styles/canvas.css">
-  <link rel="stylesheet" href="styles/windows.css">
-  <link rel="stylesheet" href="styles/controls.css">
-  <link rel="stylesheet" href="styles/notes.css">
-  <link rel="stylesheet" href="styles/tools.css">
-  <link rel="stylesheet" href="styles/pomodoro.css">
-  <link rel="stylesheet" href="styles/dabsy.css">
-  <link rel="stylesheet" href="styles/animations.css">
-  <link rel="stylesheet" href="styles/responsive.css">
-  <link rel="stylesheet" href="styles/accessibility.css">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
   <main id="stage" aria-label="Your study desk">
@@ -42,6 +33,7 @@
   <div id="toasts" aria-live="polite"></div>
   <div id="boot" role="status">Setting up your desk…</div>
   <noscript><p style="padding:2rem;font-family:sans-serif">Study Space needs JavaScript to run.</p></noscript>
-  <script type="module" src="scripts/app.js"></script>
+  <script type="module" src="app.js"></script>
+  <script>setTimeout(function(){var b=document.getElementById('boot');if(b&&!document.body.classList.contains('ready'))b.textContent='Study Space could not load its files. Make sure every file and folder from the download was uploaded, then reload.';},7000);</script>
 </body>
 </html>
