@@ -1,0 +1,27 @@
+.obj-dabsy .obj-content { background: transparent; }
+.obj-dabsy.minimized .obj-content, .obj-dabsy.minimized .obj-resize { display: none; }
+.dabsy-body, .dabsy-chat { position: absolute; inset: 0; display: flex; flex-direction: column; }
+.dabsy-chat[hidden], .dabsy-setup[hidden] { display: none; }
+.dabsy-log { flex: 1; min-height: 0; overflow-y: auto; padding: 4px 2px 8px; display: flex; flex-direction: column; gap: 8px; touch-action: pan-y; scrollbar-width: thin; }
+.dabsy-hint { margin: auto; text-align: center; color: var(--ink-3); font-size: var(--fs-s); max-width: 28ch; }
+.msg { max-width: 92%; padding: 8px 12px; border-radius: 14px; font-size: 14px; line-height: 1.5; }
+.msg p { margin: 0; white-space: pre-wrap; word-break: break-word; }
+.msg.user { align-self: flex-end; background: var(--ink); color: #fff; border-bottom-right-radius: 5px; }
+.msg.assistant { align-self: flex-start; background: rgba(255, 255, 255, .72); border-bottom-left-radius: 5px; }
+.msg.pending { color: var(--ink-3); }
+.dabsy-chips { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 8px; }
+.dabsy-chips:empty { display: none; }
+.chip { border: 1px solid var(--border-edge); background: rgba(255, 255, 255, .6); border-radius: 999px; padding: 6px 12px; font-size: var(--fs-s); cursor: pointer; }
+.chip:hover { background: rgba(255, 255, 255, .9); }
+.dabsy-composer { display: flex; flex-direction: column; gap: 6px; }
+.dabsy-composer .row { display: flex; align-items: flex-end; gap: 6px; }
+.dabsy-input { flex: 1; resize: none; max-height: 96px; border: 1px solid var(--border-edge); background: rgba(255, 255, 255, .75); border-radius: 14px; padding: 9px 12px; font: 14px/1.4 var(--font); color: var(--ink); outline: none; }
+.dabsy-input:focus { outline: 2px solid rgba(185, 112, 26, .5); }
+.ibtn.send { width: 38px; height: 38px; border-radius: 50%; background: var(--ink); color: #fff; flex: none; }
+.ibtn.send:hover { background: #3a342e; color: #fff; }
+.desk-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-s); color: var(--ink-3); cursor: pointer; align-self: flex-start; }
+.desk-toggle input { accent-color: var(--accent); }
+.dabsy-setup { position: absolute; inset: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding: 2px; touch-action: pan-y; }
+.dabsy-setup h3 { margin: 0; font-size: 16px; font-weight: 600; }
+.dabsy-setup .field { display: flex; flex-direction: column; gap: 3px; font-size: var(--fs-s); color: var(--ink-2); }
+.setup-msg { min-height: 1.2em; margin: 0; color: var(--danger); font-size: var(--fs-s); }

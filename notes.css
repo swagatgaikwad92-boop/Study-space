@@ -1,0 +1,32 @@
+/* Sticky notes: lightweight tinted glass, not big cards */
+.obj-note[data-color="butter"] { --note: 255, 236, 170; }
+.obj-note[data-color="blush"]  { --note: 255, 214, 208; }
+.obj-note[data-color="sage"]   { --note: 214, 235, 214; }
+.obj-note[data-color="sky"]    { --note: 208, 228, 245; }
+.obj-note[data-color="lilac"]  { --note: 228, 218, 245; }
+.obj-note .obj-surface { background: rgba(var(--note, 255, 236, 170), .62); }
+.obj-note.is-selected .obj-surface { background: rgba(var(--note, 255, 236, 170), .78); }
+.obj-note .obj-content { border-radius: 10px; }
+.note-text { position: absolute; inset: 0; width: 100%; height: 100%; resize: none; border: 0; outline: none; background: transparent; padding: 2px 4px 6px; font: 15px/1.5 var(--font); color: var(--ink); touch-action: pan-y; }
+.note-text::placeholder { color: var(--ink-3); }
+
+/* Calculator */
+.obj-calculator .obj-content { overflow: visible; }
+.calc-display { padding: 4px 8px 8px; text-align: right; min-height: 68px; display: flex; flex-direction: column; justify-content: flex-end; }
+.calc-expr { font: 500 22px var(--font-num); letter-spacing: -.01em; word-break: break-all; }
+.calc-result { min-height: 20px; font-size: var(--fs-m); color: var(--ink-3); }
+.calc-result.err { color: var(--danger); }
+.calc-pad { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding-top: 4px; }
+.calc-key { height: 40px; border: 0; border-radius: 12px; background: rgba(255, 255, 255, .55); font: 500 16px var(--font-num); cursor: pointer; transition: background var(--t-fast), transform var(--t-fast); }
+.calc-key:hover { background: rgba(255, 255, 255, .85); }
+.calc-key:active { transform: scale(.94); }
+.calc-key.op { background: rgba(70, 62, 50, .08); }
+.calc-key.fn { color: var(--ink-2); background: rgba(70, 62, 50, .05); }
+.calc-key.eq { background: var(--ink); color: #fff; }
+
+/* SolveCount mirror */
+.sc-face { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+.sc-time { font: 600 38px var(--font-num); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.sc-state { font-size: var(--fs-s); color: var(--ink-3); }
+.sc-subject { font-size: var(--fs-s); color: var(--ink-2); min-height: 1em; }
+.obj-solvecount[data-status="running"] .sc-state::before { content: ""; display: inline-block; width: 6px; height: 6px; margin-right: 6px; border-radius: 50%; background: var(--accent); vertical-align: 1px; }

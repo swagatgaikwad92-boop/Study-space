@@ -1,0 +1,23 @@
+.obj-pomodoro .obj-content { overflow: visible; }
+.pomo-face { position: absolute; left: 0; right: 0; top: 0; text-align: center; padding-top: 4px; }
+.pomo-label { font-size: var(--fs-m); color: var(--ink-2); letter-spacing: .02em; min-height: 1.4em; transition: color var(--t-slow); }
+.pomo-time { font: 500 64px/1.05 var(--font-num); letter-spacing: -.03em; font-variant-numeric: tabular-nums; margin: 2px 0 8px; transition: opacity var(--t-slow), color var(--t-slow); }
+.pomo-dots { display: flex; justify-content: center; gap: 7px; height: 8px; }
+.pomo-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(70, 62, 50, .16); transition: background var(--t-slow); }
+.pomo-dots i.on { background: var(--accent); }
+.obj-pomodoro[data-phase="break"] .pomo-dots i.on { background: var(--cool); }
+.pomo-actions { position: absolute; left: 0; right: 0; top: 148px; display: flex; align-items: center; justify-content: center; gap: 12px; }
+.pomo-actions .ibtn { width: 38px; height: 38px; border-radius: 50%; }
+.pomo-primary { display: inline-flex; align-items: center; gap: 6px; height: 44px; padding: 0 22px; border: 0; border-radius: 22px; background: var(--ink); color: #fff; cursor: pointer; font-size: 15px; transition: transform var(--t-fast), background var(--t-med); }
+.pomo-primary:active { transform: scale(.96); }
+.obj-pomodoro[data-phase="break"] .pomo-primary { background: var(--cool); }
+.pomo-foot { position: absolute; left: 4px; right: 0; bottom: 0; display: flex; align-items: center; justify-content: space-between; color: var(--ink-3); font-size: var(--fs-s); }
+.pomo-settings { position: absolute; inset: -6px; padding: 12px; border-radius: 16px; background: var(--glass-dialog-bg); display: grid; gap: 8px; grid-template-columns: 1fr 1fr; align-content: start; z-index: 5; }
+.pomo-settings[hidden] { display: none; }
+.pomo-settings .field { display: flex; flex-direction: column; gap: 3px; font-size: var(--fs-s); color: var(--ink-2); }
+.pomo-settings .field input[type="number"] { height: 34px; }
+.pomo-settings .field.check, .pomo-settings .btn { grid-column: 1 / -1; flex-direction: row; align-items: center; }
+/* Paused: the timer visually freezes */
+.obj-pomodoro[data-status="paused"] .pomo-time { opacity: .5; }
+.obj-pomodoro[data-status="running"] .pomo-label { color: var(--accent); }
+.obj-pomodoro[data-status="running"][data-phase="break"] .pomo-label { color: var(--cool); }

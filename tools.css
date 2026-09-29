@@ -1,0 +1,9 @@
+/* Pen toolbar */
+.pen-bar { position: absolute; left: 50%; bottom: calc(14px + var(--safe-b)); transform: translateX(-50%); display: flex; align-items: center; gap: 2px; padding: 5px 8px; border-radius: 22px; max-width: calc(100vw - 16px); overflow-x: auto; scrollbar-width: none; }
+.pen-bar[hidden] { display: none; }
+.pen-bar .ibtn { width: 34px; height: 34px; flex: none; }
+.pen-bar .sep { width: 1px; height: 20px; background: var(--line); margin: 0 5px; flex: none; }
+.pen-bar .size i { display: block; border-radius: 50%; background: currentColor; }
+.swatch { flex: none; width: 24px; height: 24px; margin: 0 3px; border-radius: 50%; border: 2px solid transparent; background: var(--c); box-shadow: 0 0 0 1px rgba(0,0,0,.12) inset; cursor: pointer; padding: 0; }
+.swatch.active { border-color: #fff; box-shadow: 0 0 0 1.5px var(--ink); }
+.pen-bar .btn { flex: none; margin-left: 4px; }

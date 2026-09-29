@@ -1,0 +1,20 @@
+/* Reusable, restrained motion. Nothing loops except the loading shimmer. */
+@keyframes shimmer { from { background-position: 120% 0; } to { background-position: -120% 0; } }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes fade-out { to { opacity: 0; } }
+@keyframes menu-in { from { opacity: 0; transform: scale(.94) translateY(6px); } }
+@keyframes menu-out { to { opacity: 0; transform: scale(.97); } }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(10px) scale(.97); } }
+@keyframes toast-in { from { opacity: 0; transform: translateY(10px); } }
+@keyframes toast-out { to { opacity: 0; transform: translateY(6px); } }
+@keyframes flash { 0% { opacity: 0; } 20% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes obj-in { from { opacity: 0; } }
+@keyframes surface-in { from { opacity: 0; transform: translateY(10px) scale(.96); } }
+@keyframes surface-out { to { opacity: 0; transform: translateY(6px) scale(.97); } }
+@keyframes settle { 0% { transform: translateY(-6px) scale(1.006); } 100% { transform: none; } }
+.obj.appearing { animation: obj-in var(--t-med) both; }
+.obj.appearing .obj-surface { animation: surface-in var(--t-slow) var(--ease) both; }
+.obj.leaving { pointer-events: none; }
+.obj.leaving .obj-surface { animation: surface-out 220ms ease-in both; }
+.obj.settling .obj-surface { animation: settle var(--t-med) var(--ease); }
+.pen-bar.appearing { animation: dialog-in var(--t-med) var(--ease) both; }

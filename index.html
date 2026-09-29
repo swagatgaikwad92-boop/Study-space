@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <title>Study Space</title>
+  <meta name="description" content="A calm glass digital desk for PDFs, lectures, notes and focus.">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Study Space">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="color-scheme" content="light">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/glass.css">
+  <link rel="stylesheet" href="styles/canvas.css">
+  <link rel="stylesheet" href="styles/windows.css">
+  <link rel="stylesheet" href="styles/controls.css">
+  <link rel="stylesheet" href="styles/notes.css">
+  <link rel="stylesheet" href="styles/tools.css">
+  <link rel="stylesheet" href="styles/pomodoro.css">
+  <link rel="stylesheet" href="styles/dabsy.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/responsive.css">
+  <link rel="stylesheet" href="styles/accessibility.css">
+</head>
+<body>
+  <main id="stage" aria-label="Your study desk">
+    <canvas id="dots" aria-hidden="true"></canvas>
+    <div id="world">
+      <div id="groups"></div>
+      <div id="guides" aria-hidden="true"></div>
+      <div id="objects"></div>
+    </div>
+    <canvas id="ink" aria-hidden="true"></canvas>
+  </main>
+  <div id="ui"></div>
+  <div id="overlays"></div>
+  <div id="toasts" aria-live="polite"></div>
+  <div id="boot" role="status">Setting up your desk…</div>
+  <noscript><p style="padding:2rem;font-family:sans-serif">Study Space needs JavaScript to run.</p></noscript>
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>

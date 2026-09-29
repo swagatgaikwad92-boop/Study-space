@@ -1,0 +1,22 @@
+/* Same spatial product on every screen: on small screens we only make targets bigger. */
+@media (pointer: coarse) {
+  .obj-rail { --rail-touch: 1; }
+  .ibtn { width: 34px; height: 34px; }
+  .obj-actions .ibtn { width: 30px; height: 30px; }
+  .obj-resize { width: 44px; height: 44px; }
+  .obj-resize::after { right: 12px; bottom: 12px; }
+  .obj-grip { width: 44px; margin-left: -22px; opacity: .28; }
+  .group-handle { width: 42px; height: 34px; }
+  input[type="range"] { height: 30px; }
+  .menu-item { min-height: 46px; }
+  .calc-key { height: 44px; }
+}
+@media (max-width: 640px) {
+  .dock-btn { padding: 0 12px; height: 46px; } .dock-btn span { font-size: 13px; }
+  .dialog { padding: 18px; }
+  .menu { min-width: 230px; }
+  .video-controls .vol, .video-controls [aria-label="Mute"] { display: none; }
+  .pen-bar { justify-content: flex-start; }
+}
+@media (max-width: 380px) { .dock-btn span { display: none; } .dock-btn { padding: 0 14px; } }
+@media (display-mode: standalone) { body { -webkit-user-select: none; } }

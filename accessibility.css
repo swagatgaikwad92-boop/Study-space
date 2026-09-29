@@ -1,0 +1,15 @@
+:focus-visible { outline: 2px solid rgba(185, 112, 26, .85); outline-offset: 2px; }
+.obj:focus-visible { outline: none; }
+.obj:focus-visible .obj-surface { box-shadow: var(--highlight), 0 0 0 2px rgba(185, 112, 26, .8), var(--shadow-2); }
+.ibtn:focus-visible, .btn:focus-visible, .dock-btn:focus-visible { outline-offset: 0; }
+.obj-title, .obj-actions { /* keep key info reachable by keyboard even when visually quiet */ }
+.obj:focus-within .obj-actions { opacity: 1; pointer-events: auto; }
+@media (prefers-contrast: more) {
+  :root { --glass-object-bg: rgba(255, 255, 255, .85); --glass-menu-bg: rgba(255, 255, 255, .96); --border-edge: rgba(0, 0, 0, .4); --ink-2: rgba(0, 0, 0, .85); --ink-3: rgba(0, 0, 0, .7); }
+}
+/* Reduced motion (system setting or the in-app override) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
+}
+:root[data-motion="reduced"] *, :root[data-motion="reduced"] *::before, :root[data-motion="reduced"] *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

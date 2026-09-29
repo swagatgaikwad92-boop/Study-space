@@ -1,0 +1,68 @@
+/* Design tokens: every surface, spacing, type and timing decision lives here. */
+:root {
+  /* Desk */
+  --paper: #f4f1ea;
+  --paper-warm: #f1e9db;
+  --paper-cool: #e8eeee;
+  --ink: #2a2622;
+  --ink-2: rgba(42, 38, 34, .72);
+  --ink-3: rgba(42, 38, 34, .5);
+  --line: rgba(70, 62, 50, .14);
+  --dot-rgb: 70, 62, 50;
+  --accent: #b9701a;            /* amber: focus */
+  --accent-soft: rgba(214, 140, 48, .16);
+  --cool: #3f7f8c;              /* teal: break */
+  --danger: #b0392e;
+
+  /* Glass hierarchy: canvas controls < objects < active < menus < dialogs */
+  --glass-canvas-bg: rgba(255, 255, 255, .34);
+  --glass-canvas-blur: 8px;
+  --glass-object-bg: rgba(255, 255, 255, .5);
+  --glass-object-blur: 10px;
+  --glass-active-bg: rgba(255, 255, 255, .62);
+  --glass-menu-bg: rgba(255, 253, 249, .8);
+  --glass-menu-blur: 20px;
+  --glass-dialog-bg: rgba(255, 253, 249, .92);
+  --glass-dialog-blur: 26px;
+  --glass-saturate: 1.25;
+  --border-glass: rgba(255, 255, 255, .7);
+  --border-edge: rgba(70, 62, 50, .12);
+  --highlight: inset 0 1px 0 rgba(255, 255, 255, .75);
+
+  /* Elevation */
+  --shadow-1: 0 1px 2px rgba(60, 50, 35, .06), 0 4px 14px rgba(60, 50, 35, .06);
+  --shadow-2: 0 2px 4px rgba(60, 50, 35, .07), 0 10px 28px rgba(60, 50, 35, .10);
+  --shadow-3: 0 4px 8px rgba(60, 50, 35, .08), 0 18px 44px rgba(60, 50, 35, .14);
+
+  /* Shape + space */
+  --r-object: 20px;
+  --r-content: 12px;
+  --r-control: 12px;
+  --r-pill: 999px;
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px;
+  --tap: 40px;
+
+  /* Type */
+  --font: "SF Pro Text", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --font-num: "SF Pro Rounded", "Inter", ui-rounded, system-ui, sans-serif;
+  --fs-s: 12px; --fs-m: 14px; --fs-l: 16px;
+
+  /* Motion */
+  --ease: cubic-bezier(.22, .8, .24, 1);
+  --ease-soft: cubic-bezier(.3, .1, .2, 1);
+  --t-fast: 140ms; --t-med: 260ms; --t-slow: 460ms;
+
+  /* Z-index system (objects are banded by type inside #world) */
+  --z-dots: 0;
+  --z-world: 10;     /* content (100-999) < tools (1000-1999) < DABSy/Pomodoro (2000+) inside the world */
+  --z-ink: 20;
+  --z-ui: 40;
+  --z-menu: 60;
+  --z-dialog: 80;
+  --z-toast: 90;
+
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+}

@@ -1,0 +1,26 @@
+/* One coherent glass system. Quiet, premium: low blur, restrained borders. */
+.glass {
+  background: var(--glass-object-bg);
+  -webkit-backdrop-filter: blur(var(--glass-object-blur)) saturate(var(--glass-saturate));
+  backdrop-filter: blur(var(--glass-object-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--highlight), 0 0 0 .5px var(--border-edge), var(--shadow-1);
+  color: var(--ink);
+}
+.glass.strong {
+  background: var(--glass-menu-bg);
+  -webkit-backdrop-filter: blur(var(--glass-menu-blur)) saturate(1.4);
+  backdrop-filter: blur(var(--glass-menu-blur)) saturate(1.4);
+  box-shadow: var(--highlight), 0 0 0 .5px var(--border-edge), var(--shadow-2);
+}
+.glass.strongest {
+  background: var(--glass-dialog-bg);
+  -webkit-backdrop-filter: blur(var(--glass-dialog-blur)) saturate(1.4);
+  backdrop-filter: blur(var(--glass-dialog-blur)) saturate(1.4);
+  box-shadow: var(--highlight), 0 0 0 .5px var(--border-edge), var(--shadow-3);
+}
+/* Without backdrop-filter, keep text readable by raising opacity */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: rgba(255, 253, 249, .88); }
+  .glass.strong, .glass.strongest { background: rgba(255, 253, 249, .96); }
+}
